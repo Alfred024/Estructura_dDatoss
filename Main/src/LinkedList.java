@@ -57,6 +57,44 @@ public class LinkedList {
         }
     }
     
+    public boolean searchNodeByElement(int searchElem){
+        Nodo aux = start;
+        boolean finded = false;
+        while(aux.next != null){
+            if(aux.value == searchElem){
+                finded = true;
+            }
+            aux = aux.next;
+        }
+        
+        if(aux.value == searchElem){
+            finded = true;
+        }
+        
+        if(finded){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
+    public void deleteNodeByElement(int searchElem){
+        if(searchNodeByElement(searchElem)){
+            Nodo aux = start;
+            
+            if(aux.value == searchElem){
+                deleteStart();
+            }else{
+                while(aux.next.value != searchElem){
+                    aux = aux.next;
+                }aux.next = aux.next.next;
+            }
+            
+        }else{
+            System.out.println("El nodo que deseas eliminar no se encuentra en la lista");
+        }
+    }
+    
     public void showData(){
         Nodo aux = start;
         String lista="";
