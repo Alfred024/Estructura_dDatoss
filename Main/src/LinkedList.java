@@ -28,6 +28,35 @@ public class LinkedList {
         }
     }
     
+    public void deleteStart(){
+        if(start == null){
+            System.out.println("Sin elementos en la lista");
+        }else{
+            if(start == end){
+                start = null;
+            }else{
+                start = start.next;
+            }
+        }
+    }
+    
+    public void deleteEnd(){
+        if(start == null){
+            System.out.println("Sin elementos en la lista");
+        }else{
+            if(start == end){
+                start = null;
+            }else{
+                Nodo aux = start;
+                while(aux.next != end){
+                    aux = aux.next;
+                }
+                end = aux;
+                aux.next = null;
+            }
+        }
+    }
+    
     public void showData(){
         Nodo aux = start;
         String lista="";
@@ -36,6 +65,8 @@ public class LinkedList {
                 lista+=aux.value+"--> ";
                 aux = aux.next;
             }lista+=aux.value+"--> null";
+            
+            System.out.println("Linked List: "+lista);
         }else{
             System.out.println("Sin elementos en la lista");
         }
