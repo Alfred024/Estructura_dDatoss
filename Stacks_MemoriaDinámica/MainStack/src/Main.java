@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author solid
- */
 public class Main {
-    
+    public static void main(String[] args) {
+        
+        Stack newStack = new Stack();
+        
+        newStack.push(30); newStack.push(20); newStack.push(10);
+        newStack.showData();
+    }
 }
