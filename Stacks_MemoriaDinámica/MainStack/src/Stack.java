@@ -16,6 +16,14 @@ public class Stack {
     public boolean isEmpty(){
         return top == null;
     }
+
+    public int getSize(){
+        return size;
+    }
+    
+    public int getTop(){
+        return top.value;
+    }
     
     public void push(int value){
         Nodo newNode = new Nodo(value);
@@ -28,33 +36,33 @@ public class Stack {
         }size++;
     }
     
-    public void push2(int value){
-        Nodo newNode = new Nodo(value);
-        
-        newNode.next = top;
-        top = newNode;
-    }
-    
     public void pop(){
         if(top != null){
-            top = null;
+            top = top.next;
+            size--;
         }else{
-            System.out.println("No hay elementos en la lista");
+            JOptionPane.showMessageDialog(null, "No hay elementos en la lista");
         }
     }
     
     //Limpiar toda la pila
     public void clear(){
-        
+        top = null;
+        size = 0;
     }
     
     public void showData(){
         Nodo aux = top;
-        String stack = "";
-        while(aux.next != null){
-            stack+="["+aux.value+"]\n";
-            aux = aux.next;
-        }stack+="["+aux.value+"]\n";
-        JOptionPane.showMessageDialog(null, "Stack\n"+stack);
+        if(aux != null){
+            String stack = "";
+            while(aux.next != null){
+                stack+="["+aux.value+"]\n";
+                aux = aux.next;
+            }stack+="["+aux.value+"]\n";
+            JOptionPane.showMessageDialog(null, "Stack\n"+stack);
+        }else{
+            JOptionPane.showMessageDialog(null, "No hay elementos en la lista");
+        }
+        
     }
 }
