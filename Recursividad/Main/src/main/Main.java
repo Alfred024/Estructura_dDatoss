@@ -20,7 +20,7 @@ public class Main {
     }
     
     //Calcular secuencia fibonacci hasta la vuelta X
-    static int fibonacci(){
+    static int fibonacci(int vuelta){
         return 0;
     }
 }
