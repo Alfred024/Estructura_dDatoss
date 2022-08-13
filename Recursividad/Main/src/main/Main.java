@@ -5,9 +5,11 @@ public class Main {
 
     public static void main(String[] args) {
         
-        int factorialX = 8;
-        System.out.print("Factorial de "+factorialX+": "+factorial(factorialX)+"\n");
+        /*int factorialX = 8;
+        System.out.print("Factorial de "+factorialX+": "+factorial(factorialX)+"\n");*/
         
+        int vuelta = 7;
+        System.out.println("Secuencia fibonacci hasta la vuelta #"+vuelta+": "+fibonacci(1,1,vuelta));
     }
     
     //Calcular el factorial con métodos recursivos
@@ -20,7 +22,16 @@ public class Main {
     }
     
     //Calcular secuencia fibonacci hasta la vuelta X
-    static int fibonacci(int vuelta){
-        return 0;
+    static int fibonacci(int x, int y,int lim){
+        int res = 1;
+        while(lim>0){ 
+            res = x + y;
+            y = x;
+            x = res;
+            fibonacci(x,y,lim-1);
+            lim--;
+        }
+        
+        return res;
     }
 }
