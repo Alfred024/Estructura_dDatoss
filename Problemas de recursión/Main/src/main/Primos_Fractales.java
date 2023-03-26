@@ -24,7 +24,8 @@ public class Primos_Fractales {
                 }div++;
             }
             
-            if(cont == 2){
+            if(N.length() >= 2){
+                if(cont == 2){
                 String N1="",N2="";
                 cont = N.length()/2;
                 for (int i = 0; i <= cont; i++) {
@@ -41,9 +42,11 @@ public class Primos_Fractales {
                     primF = false;
                 }
                
-            }else{
-                primF = false;
+                }else{
+                    primF = false;
+                }
             }
+            
         }
         return primF;
     }
