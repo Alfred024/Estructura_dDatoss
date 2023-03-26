@@ -1,0 +1,6 @@
+index.txt
+LinkedList/
+Problemas de recursión/
+README.md
+Recursividad/
+Stacks_MemoriaDinámica/
